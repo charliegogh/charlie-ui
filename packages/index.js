@@ -1,14 +1,20 @@
-import test from './test'
-const components = [test]
+import Star from './star'
+import Alert from './alert'
+const components = [
+  Star,
+  Alert
+]
 const install = function(Vue) {
-  if (install.installed) return
-  components.map((component) => Vue.component(component.name, component))
+  components.forEach(component => {
+    Vue.component(component.name, component)
+  })
 }
 if (window && window.Vue) {
-  Vue.use(install)
+  install(window.Vue)
 }
 export {
   install,
-  test
+  Star,
+  Alert
 }
 

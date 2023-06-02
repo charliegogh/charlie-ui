@@ -1,6 +1,6 @@
-import Test from './src'
+import Star from './src'
 
-Test.install = function(Vue) {
-  Vue.component(Test.name, Test)
+Star.install = function(Vue) {
+  Vue.component(Star.name, Star)
 }
-export default Test
+export default Star

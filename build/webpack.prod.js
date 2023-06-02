@@ -16,7 +16,7 @@ const prodConfig = {
     }
   },
   entry: {
-    'index': './packages/index.js'
+    'star': './packages/star/index.js'
   },
   output: {
     filename: '[name].js',
@@ -26,10 +26,10 @@ const prodConfig = {
     umdNamedDefine: true
   },
   plugins: [
-    new MiniCssExtractPlugin({ // 单独提取css文件
-      filename: 'css/[name].[hash].css',
-      chunkFilename: 'css/[name].[hash].css' // splitChunks提取公共css时的命名规则
-    }),
+    // new MiniCssExtractPlugin({ // 单独提取css文件
+    //   filename: 'css/[name].[hash].css',
+    //   chunkFilename: 'css/[name].[hash].css' // splitChunks提取公共css时的命名规则
+    // }),
     new CleanWebpackPlugin(),
     new WebpackManifestPlugin() // 生成manifest.json
     // new CompressionWebpackPlugin(),
@@ -39,7 +39,7 @@ const prodConfig = {
     // js 压缩 webpack5自带
     minimizer: [
       '...'
-    ],
+    ]
     // runtimeChunk: { name: 'runtime' } // 运行时代码 ??? 开启是
   },
   performance: {
