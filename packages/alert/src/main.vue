@@ -68,22 +68,21 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.x-alert{
+.x-alert {
   margin: 0;
-  padding: 8px 0 8px 8px;
+  padding: 8px 30px 8px 8px;
   position: relative;
   background: #fff1e5;
-  .x-alert-message{
+  .x-alert-message {
     color: #914100;
     box-sizing: border-box;
-    font-size: 14px;
     font-size: 14px;
     font-family: Microsoft YaHei UI, Microsoft YaHei UI-Regular;
     font-weight: 400;
     line-height: 1.5;
     word-wrap: break-word;
   }
-  .x-alert-close-icon{
+  .x-alert-close-icon {
     position: absolute;
     top: 8px;
     right: 16px;
@@ -97,12 +96,11 @@ export default {
     cursor: pointer;
     display: flex;
     align-items: center;
-    .x-alert-close{
-      margin-right: 18px;
+    .x-alert-close {
+      margin-right: 15px;
       font-size: 12px;
       color: #6f7582;
     }
   }
 }
-
 </style>

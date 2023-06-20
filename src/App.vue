@@ -1,14 +1,15 @@
 <template>
   <div>
-    <Star />
+    <alert>
+      12312
+    </alert>
   </div>
 </template>
 <script>
-import { Star, Alert } from '../dist'
+import alert from '../lib/alert'
 export default {
   components: {
-    Star,
-    Alert
+    alert
   },
   mounted() {
   }

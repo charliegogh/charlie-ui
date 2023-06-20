@@ -1,10 +1,6 @@
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { merge } = require('webpack-merge')
 const baseConfig = require('./webpack.base')
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const prodConfig = {
   mode: 'production',
   externals: {
@@ -15,31 +11,24 @@ const prodConfig = {
       amd: 'vue'
     }
   },
-  entry: {
-    'star': './packages/star/index.js'
-  },
+  entry: path.resolve(process.cwd(), './packages/index.js'),
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, '../dist'),
+    filename: '[name].[hash].js',
+    path: path.resolve(process.cwd(), './dist'),
     library: '[name]',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
   plugins: [
-    // new MiniCssExtractPlugin({ // 单独提取css文件
-    //   filename: 'css/[name].[hash].css',
-    //   chunkFilename: 'css/[name].[hash].css' // splitChunks提取公共css时的命名规则
-    // }),
-    new CleanWebpackPlugin(),
-    new WebpackManifestPlugin() // 生成manifest.json
-    // new CompressionWebpackPlugin(),
+    // new WebpackManifestPlugin() // 生成manifest.json
+    // new CompressionWebpackPlugin()
   ],
   optimization: {
-    minimize: true, // 默认最优配置：生产环境，压缩 true。开发环境，不压缩 false
+    // minimize: true, // 默认最优配置：生产环境，压缩 true。开发环境，不压缩 false
     // js 压缩 webpack5自带
-    minimizer: [
-      '...'
-    ]
+    // minimizer: [
+    //   '...'
+    // ]
     // runtimeChunk: { name: 'runtime' } // 运行时代码 ??? 开启是
   },
   performance: {

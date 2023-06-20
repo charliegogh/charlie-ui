@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.dev.js",
     "build": "webpack --progress --config build/webpack.prod.js",
+    "component": "rimraf ./lib && webpack --config build/webpack.component.js",
     "build-publish": "rimraf ./dist && npm run build && node build/publish && cd dist && npm publish"
   },
   "keywords": [

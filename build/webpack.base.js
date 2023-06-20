@@ -13,10 +13,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.vue$/,
-        use: 'vue-loader'
+        test: /\.js$/,
+        use: ['babel-loader']
       },
-      { test: /\.js$/, use: ['babel-loader'] },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          compilerOptions: {
+            preserveWhitespace: false // 忽略空格
+          }
+        }
+      },
       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource'
       },
       {
@@ -57,18 +65,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({ // 单独提取css文件
+      filename: '[name].[hash].css',
+      chunkFilename: '[name].[hash].css' // splitChunks提取公共css时的命名规则
+    }),
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
-    // 进度条
     new ProgressBarPlugin()
-    // 处理静态文件夹  static之类
-    // ~~~
-    // eslint
-    // new ESLintPlugin({
-    //   fix: false, /* 自动帮助修复 */
-    //   extensions: ['js', 'json', 'vue'],
-    //   exclude: 'node_modules'
-    // })
   ]
 }

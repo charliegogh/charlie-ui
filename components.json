@@ -1,3 +1,4 @@
 {
-  "star": "./packages/star/index.js"
+  "star": "./packages/star/index.js",
+  "alert": "./packages/alert/index.js"
 }
