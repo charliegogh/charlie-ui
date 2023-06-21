@@ -1,15 +1,13 @@
 <template>
   <div>
-    <alert>
-      12312
-    </alert>
+    <star />
   </div>
 </template>
 <script>
-import alert from '../lib/alert'
+import star from '../lib/star'
 export default {
   components: {
-    alert
+    star
   },
   mounted() {
   }
