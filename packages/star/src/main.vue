@@ -63,18 +63,5 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.x-rating {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  .x-star {
-    width: 17px;
-    height: 16px;
-    cursor: pointer;
-  }
-  .x-star-icon {
-    height: 100%;
-    transition: fill 0.2s;
-  }
-}
+
 </style>

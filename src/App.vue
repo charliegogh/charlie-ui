@@ -1,13 +1,20 @@
 <template>
   <div>
-    <star />
+    <checkbox
+      v-model="check"
+    />
   </div>
 </template>
 <script>
-import star from '../lib/star'
+import checkbox from '../packages/checkbox/src/checkbox.vue'
 export default {
   components: {
-    star
+    checkbox
+  },
+  data() {
+    return {
+      check: true
+    }
   },
   mounted() {
   }
