@@ -1,22 +1,44 @@
 <template>
   <div>
-    <checkbox
-      v-model="check"
+    <button @click="test">
+      123
+    </button>
+    <!--    <AddressModal-->
+    <!--      ref="AddressModal"-->
+    <!--      @handleSubmit="handleSubmit"-->
+    <!--    />-->
+    <shippingAddress
+      ref="shippingAddress"
+      @handleSubmit="handleSubmit"
     />
   </div>
 </template>
 <script>
-import checkbox from '../packages/checkbox/src/checkbox.vue'
+import AddressModal from './AddressModal/index.vue'
+import shippingAddress from '../packages/ShippingAddress/index.vue'
 export default {
+  name: 'Login',
   components: {
-    checkbox
+    AddressModal,
+    shippingAddress
   },
   data() {
     return {
-      check: true
+      component: null
     }
   },
   mounted() {
+
+  },
+  methods: {
+    test() {
+      this.$refs.shippingAddress.add({
+        name: '123'
+      })
+    },
+    handleSubmit(el) {
+      console.log(el)
+    }
   }
 }
 </script>

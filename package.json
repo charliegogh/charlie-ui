@@ -1,5 +1,5 @@
 {
-  "name": "charliegogh-ui",
+  "name": "charlie-ui",
   "version": "1.0.2",
   "main": "/dist/index.js",
   "scripts": {
@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "vue": "^2.6.10",
-    "core-js": "^3.6.5"
+    "core-js": "^3.6.5",
+    "async-validator": "^1.10.0"
   }
 }

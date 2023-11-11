@@ -1,8 +1,13 @@
-import Star from './star'
-import Alert from './alert'
+// import Star from './star'
+// import Alert from './alert'
+// import Spin from './spin'
+import ShippingAddress from './ShippingAddress/install'
+
 const components = [
-  Star,
-  Alert
+  ShippingAddress
+  // Star,
+  // Alert,
+  // Spin
 ]
 const install = function(Vue) {
   components.forEach(component => {
@@ -14,7 +19,8 @@ if (window && window.Vue) {
 }
 export {
   install,
-  Star,
-  Alert
+  ShippingAddress
+  // Alert,
+  // Spin
 }
 

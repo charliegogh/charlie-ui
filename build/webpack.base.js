@@ -7,7 +7,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.ts'],
     alias: {
-      '@': path.resolve(__dirname, '../src') // 别名
+      '@': path.resolve(__dirname, '../src'),
+      '@p': path.resolve(__dirname, '../packages')
     }
   },
   module: {
@@ -38,27 +39,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
           'css-loader'
         ]
       },
       {
         test: /\.(less)$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../../' // css 内部文件资源路径问题
-            }
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: false,
-              importLoaders: 2
-            }
-          },
-          'postcss-loader',
+          'style-loader',
+          'css-loader',
           'less-loader'
         ]
       }

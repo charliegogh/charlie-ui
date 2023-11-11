@@ -1,0 +1,129 @@
+@import url('./flex.less');
+.x-dialog__wrapper {
+  z-index: 2001;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  margin: 0;
+}
+.x-shipping-address {
+  color: #333333;
+  font-size: 14px;
+  &__add {
+  }
+
+  &__preview {
+  }
+  &__handle {
+    margin-top: 24px;
+    .x-button {
+      width: 72px;
+      height: 32px;
+      border: 1px solid;
+      outline: none;
+      border-radius: 4px;
+      transition: background 0.3s;
+      &.btn-blue {
+        background: #1a5eff;
+        color: #ffffff;
+        border-color: #1a5eff;
+      }
+      &.btn-line-blue {
+        background: #ffffff;
+        color: #1a5eff;
+        border-color: #1a5eff;
+      }
+      &:hover {
+        background: #487eff;
+        color: #ffffff;
+        border-color: #487eff;
+        cursor: pointer;
+      }
+      & + .x-button {
+        margin-left: 24px;
+      }
+      .row-all-center;
+    }
+    .row-all-center;
+  }
+  .x-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    width: 630px;
+    background: #ffffff;
+    box-shadow: 0 0 12px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    .p-tip {
+      color: #999DA6;
+      .text-tag {
+        color: #f26d00;
+      }
+    }
+
+    &__header {
+      border-bottom: 1px solid #D6D8DB;
+      padding: 16px 24px;
+      .row-between-center;
+      button {
+        border: none;
+        background: none;
+        transform: scale(1.2, 0.86);
+        color: #999DA6;
+        &:hover {
+          cursor: pointer;
+          color: #487eff;
+        }
+      }
+    }
+    &__body {
+      padding: 24px;
+      form {
+        padding: 24px 0;
+      }
+    }
+    .x-form-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 36px;
+      margin-bottom: 20px;
+      .x-form-item-label {
+        min-width: 80px;
+        text-align: right;
+      }
+      .x-form-input {
+        flex: 1;
+        input {
+          width: 100%;
+          padding: 0 8px;
+          line-height: 36px;
+          border: 1px solid #D6D8DB;
+          border-radius: 4px;
+          transition: border-color 0.3s;
+          &:hover,
+          &:focus {
+            border-color: #1a5eff;
+          }
+        }
+      }
+      .x-form-item-label-required:before {
+        content: "*";
+        color: #F44C4C;
+        margin-right: 2px;
+      }
+      .x-form-item-message {
+        position: absolute;
+        top: calc(100% + 2px);
+        left: 80px;
+        font-size: 12px;
+        color: #F44C4C;
+      }
+    }
+  }
+}

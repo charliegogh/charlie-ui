@@ -11,13 +11,14 @@ const prodConfig = {
       amd: 'vue'
     }
   },
-  entry: path.resolve(process.cwd(), './packages/index.js'),
+  entry: path.resolve(process.cwd(), './packages/ShippingAddress/install.js'),
   output: {
-    filename: '[name].[hash].js',
     path: path.resolve(process.cwd(), './dist'),
-    library: '[name]',
+    filename: 'ShippingAddress.js',
+    library: 'ShippingAddress',
     libraryTarget: 'umd',
     umdNamedDefine: true
+    // libraryExport: 'default'
   },
   plugins: [
     // new WebpackManifestPlugin() // 生成manifest.json
