@@ -1,6 +1,11 @@
-import ShippingAddress from './index.vue'
+// ShippingAddress.js
 
-ShippingAddress.install = function(Vue) {
-  Vue.component(ShippingAddress.name, ShippingAddress)
-}
-export default ShippingAddress
+import ShippingAddressComponent from './index.vue'
+
+// const ShippingAddressPlugin = {
+//   install(Vue) {
+//     Vue.component('ShippingAddress', ShippingAddressComponent)
+//   }
+// }
+
+export default ShippingAddressComponent

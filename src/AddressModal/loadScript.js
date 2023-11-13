@@ -1,15 +1,12 @@
-import Vue from 'vue'
 export default function loadScript(src, module) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script')
     script.src = src
-    script.async = true
+    script.async = false
     script.onload = () => {
-      if (module) Vue.use(window[module].default)
-      resolve()
+      resolve(window[module].default)
     }
     script.onerror = reject
     document.head.appendChild(script)
   })
 }
-

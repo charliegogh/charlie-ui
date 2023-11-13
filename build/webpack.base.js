@@ -57,7 +57,7 @@ module.exports = {
       filename: '[name].[hash].css',
       chunkFilename: '[name].[hash].css' // splitChunks提取公共css时的命名规则
     }),
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
     new ProgressBarPlugin()
   ]

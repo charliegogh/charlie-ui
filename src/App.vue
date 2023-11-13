@@ -1,26 +1,19 @@
 <template>
   <div>
-    <button @click="test">
-      123
-    </button>
-    <!--    <AddressModal-->
-    <!--      ref="AddressModal"-->
-    <!--      @handleSubmit="handleSubmit"-->
-    <!--    />-->
-    <shippingAddress
-      ref="shippingAddress"
+    <AddressModal
+      ref="AddressModal"
       @handleSubmit="handleSubmit"
+      @handleClose="handleClose"
     />
   </div>
 </template>
 <script>
-import AddressModal from './AddressModal/index.vue'
-import shippingAddress from '../packages/ShippingAddress/index.vue'
+// import AddressModal from './AddressModal/index.vue'
+import AddressModal from '../packages/ShippingAddress'
 export default {
   name: 'Login',
   components: {
-    AddressModal,
-    shippingAddress
+    AddressModal
   },
   data() {
     return {
@@ -28,16 +21,16 @@ export default {
     }
   },
   mounted() {
-
+    this.$refs.AddressModal.add({
+      orderName: '11'
+    })
   },
   methods: {
-    test() {
-      this.$refs.shippingAddress.add({
-        name: '123'
-      })
-    },
     handleSubmit(el) {
       console.log(el)
+    },
+    handleClose() {
+      console.log('close')
     }
   }
 }

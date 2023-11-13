@@ -13,7 +13,7 @@ const prodConfig = {
   },
   entry: path.resolve(process.cwd(), './packages/ShippingAddress/install.js'),
   output: {
-    path: path.resolve(process.cwd(), './dist'),
+    path: path.resolve(process.cwd(), './public'),
     filename: 'ShippingAddress.js',
     library: 'ShippingAddress',
     libraryTarget: 'umd',

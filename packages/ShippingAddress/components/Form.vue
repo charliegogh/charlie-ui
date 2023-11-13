@@ -28,8 +28,8 @@
   </x-form>
 </template>
 <script>
-import xForm from './form/form'
-import xFormItem from './form/form-item'
+import xForm from './form/form.vue'
+import xFormItem from './form/form-item.vue'
 import xInput from './input/input.vue'
 export default {
   components: {

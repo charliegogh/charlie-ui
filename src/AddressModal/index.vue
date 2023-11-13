@@ -3,6 +3,7 @@
     :is="component"
     ref="ShippingAddressModal"
     @handleSubmit="handleSubmit"
+    @close="handleClose"
   />
 </template>
 <script>
@@ -18,14 +19,19 @@ export default {
     handleSubmit(el) {
       this.$emit('handleSubmit', el)
     },
-    async add(record) {
-      await loadScript(
+    handleClose(el) {
+      this.$emit('handleClose', el)
+    },
+    async add() {
+      this.$options.components['ShippingAddress'] = await loadScript(
         './ShippingAddress.js',
         'ShippingAddress'
       )
       this.component = 'ShippingAddress'
       this.$nextTick(() => {
-        this.$refs.ShippingAddressModal.add(record)
+        this.$refs.ShippingAddressModal.add({
+          orderName: '~~~~'
+        })
       })
     }
   }
