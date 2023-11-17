@@ -41,6 +41,7 @@
 import xDialog from './components/dialog/index.vue'
 import Form from './components/Form.vue'
 import xButton from './components/button.vue'
+// import { desensitizationPhone, desensitizationUserName } from './utils'
 const domain = document.domain.split('.')[0]
 const link = {
   'xtest': 'https://xtest.cnki.net/account/app.html',
