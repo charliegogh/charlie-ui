@@ -1,16 +1,17 @@
 <template>
   <div>
-    <AddressModal ref="AddressModal" />
-    <Spin />
+    <AddressModal
+      ref="AddressModal"
+      @handleSubmit="handleSubmit"
+      @handleClose="handleClose"
+    />
   </div>
 </template>
 <script>
-import Spin from '../packages/spin'
-import AddressModal from './AddressModal/index.vue'
+import AddressModal from '../packages/ShippingAddress'
 export default {
   name: 'App',
   components: {
-    Spin,
     AddressModal
   },
   data() {
@@ -19,9 +20,17 @@ export default {
     }
   },
   mounted() {
-    this.$refs.AddressModal.add()
+    this.$refs.AddressModal.add({
+      orderName: '11'
+    })
   },
   methods: {
+    handleSubmit(el) {
+      console.log(el)
+    },
+    handleClose() {
+      console.log('close')
+    }
   }
 }
 </script>

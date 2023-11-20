@@ -1,8 +1,8 @@
 const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const autoprefixer = require('autoprefixer')
 module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.ts'],
@@ -47,7 +47,22 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'less-loader'
+          'less-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [autoprefixer({
+                  overrideBrowserslist: [
+                    'last 10 Chrome versions',
+                    'last 5 Firefox versions',
+                    'Safari >= 6',
+                    'ie> 8'
+                  ]
+                })]
+              }
+            }
+          }
         ]
       }
     ]

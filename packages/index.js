@@ -1,12 +1,9 @@
-// import Star from './star'
-// import Alert from './alert'
+import Star from './star'
+import Alert from './alert'
 // import Spin from './spin'
-import ShippingAddress from './ShippingAddress/install'
-
 const components = [
-  ShippingAddress
-  // Star,
-  // Alert,
+  Star,
+  Alert
   // Spin
 ]
 const install = function(Vue) {
@@ -19,8 +16,7 @@ if (window && window.Vue) {
 }
 export {
   install,
-  ShippingAddress
-  // Alert,
-  // Spin
+  Alert,
+  Star
 }
 

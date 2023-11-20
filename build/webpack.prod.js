@@ -11,11 +11,11 @@ const prodConfig = {
       amd: 'vue'
     }
   },
-  entry: path.resolve(process.cwd(), './packages/ShippingAddress/install.js'),
+  entry: path.resolve(process.cwd(), './packages/index.js'),
   output: {
-    path: path.resolve(process.cwd(), './public'),
-    filename: 'ShippingAddress.js',
-    library: 'ShippingAddress',
+    path: path.resolve(process.cwd(), './dist'),
+    filename: 'app.js',
+    library: 'Xui',
     libraryTarget: 'umd',
     umdNamedDefine: true
     // libraryExport: 'default'
